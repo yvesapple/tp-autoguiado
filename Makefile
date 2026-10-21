@@ -7,8 +7,10 @@ all: fork threads semaforos shm sockets
 fork: 1-fork.c
 	$(C) $(CFLAGS) -o 1-fork 1-fork.c
 
-threads: 2-threads-a.cpp
-	$(CXX) $(CXXFLAGS) -o 2-threads 2-threads-a.cpp
+threads: 2-threads-a.cpp 2-threads-b.cpp 2-threads-c.cpp
+	$(CXX) $(CXXFLAGS) -o 2-threads-a 2-threads-a.cpp
+	$(CXX) $(CXXFLAGS) -o 2-threads-b 2-threads-b.cpp
+	$(CXX) $(CXXFLAGS) -o 2-threads-c 2-threads-c.cpp
 
 semaforos: 3-semaforos.cpp
 	$(CXX) $(CXXFLAGS) -o 3-semaforos 3-semaforos.cpp

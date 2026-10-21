@@ -101,12 +101,12 @@ make threads
 
 2. Ejecutamos el programa con:
 ```bash
-./2-threads
+./2-threads-a
 ```
 
 3. En otra terminal, ejecutamos:
 ```bash
-ps -fLC 2-threads
+ps -fLC 2-threads-a
 ```
 
 4. Analizar:
@@ -115,8 +115,8 @@ ps -fLC 2-threads
     * ¿Por qué todos tienen el mismo PID?
 
 5. Terminamos la ejecución del proceso con `Ctrl+C`.
-6. Modificamos el código para que cada thread realice 30 impresiones por pantalla, reemplazando el `while` de `trabajoThread` por un `for`.
-7. Volvemos a compilar y ejecutar el programa como se hizo en los pasos anteriores.
+6. En 2-threads-b.cpp se modificó el código para que cada thread realice 30 impresiones por pantalla, reemplazando el `while` de `trabajoThread` por un `for`.
+7. Volvemos a realizar los pasos 2 y 3 reemplazando el ejecutable a por el b (2-threads-b).
 8. Ejecutar el programa varias veces (no hace falta recompilar). Analizar:
    * ¿En qué orden se imprimen los textos en la terminal?
    * ¿Es siempre el mismo?
@@ -124,10 +124,10 @@ ps -fLC 2-threads
    * ¿Por qué pasa esto?
    * ¿Qué propuestas tienen para solucionar este problema?
 
-9. Agregamos un mutex para sincronizar la salida por pantalla, que en este caso es nuestro recurso compartido. Analizar:
+9. En 2-threads-c.cpp se agregó un mutex para sincronizar la salida por pantalla, que en este caso es nuestro recurso compartido. Analizar:
     * ¿Cómo se relacionan los métodos `lock` y `unlock` de `mutex` con las primitivas vistas en la teoría de la materia?
 
-10. Recompilamos y volvemos a ejecutar el programa.
+10. Volvemos a realizar los pasos 2 y 3 reemplazando el ejecutable por el c (2-threads-c).
     * ¿Se solucionaron los problemas de salida por pantalla?
     * ¿Cómo identificar que el proceso tiene threads y cuántos son?
     * ¿Hay alguna jerarquía en los threads como con los procesos?
